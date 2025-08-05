@@ -7,6 +7,11 @@ authors:
     orcid: https://orcid.org/0000-0002-9934-0608 #optional
     website: https://github.com/guoqing-NOAA # optional
     affiliation: CIRES, University of Colorado Boulder at NOAA/GSL
+  - family-names: Karakurt
+    given-names: Altug
+    orcid: https://orcid.org/0000-0003-2097-4999
+    website: https://altugkarakurt.com/
+    affiliation: University of Colorado Boulder
   - name: "mpas-jedi-cookbook contributors" # use the 'name' field to acknowledge organizations
     website: "https://github.com/ProjectPythia/mpas-jedi-cookbook/graphs/contributors"
 title: "MPAS+JEDI cookbook"
