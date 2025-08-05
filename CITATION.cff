@@ -7,7 +7,13 @@ authors:
     orcid: https://orcid.org/0000-0002-9934-0608 #optional
     website: https://github.com/guoqing-NOAA # optional
     affiliation: CIRES, University of Colorado Boulder at NOAA/GSL
+ - family-names: Stephen
+    given-names: Asare
+    orcid: https://orcid.org/0000-0002-2438-5000 #optional
+    website: https://github.com/stephen-asare/ # optional
+    affiliation: Florida State University
   - name: "mpas-jedi-cookbook contributors" # use the 'name' field to acknowledge organizations
     website: "https://github.com/ProjectPythia/mpas-jedi-cookbook/graphs/contributors"
 title: "MPAS+JEDI cookbook"
 abstract: "A sample cookbook description."
+
