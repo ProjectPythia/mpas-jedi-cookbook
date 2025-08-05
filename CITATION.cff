@@ -13,6 +13,11 @@ authors:
     given-names: Orhan
     orcid: https://orcid.org/0000-0003-3099-8775
     affiliation: NSF National Center for Atmospheric Research
+  - family-names: Karakurt
+    given-names: Altug
+    orcid: https://orcid.org/0000-0003-2097-4999
+    website: https://altugkarakurt.com/
+    affiliation: University of Colorado Boulder
   - name: "mpas-jedi-cookbook contributors" # use the 'name' field to acknowledge organizations
     website: "https://github.com/ProjectPythia/mpas-jedi-cookbook/graphs/contributors"
 title: "MPAS+JEDI Cookbook"
