@@ -8,6 +8,7 @@ dependencies:
   - mystmd
   - jupyterlab-myst
   - netCDF4
+  - h5netcdf
   - scipy
   - matplotlib
   - cartopy
