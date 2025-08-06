@@ -22,5 +22,5 @@ dependencies:
   # - uxarray  # for now until releasing vertical cross-sections
   - xarray
   - vim
-pip:
-  - git+https://github.com/UXARRAY/uxarray@interpolate-cross-section  # remove when you revert uxarray above!
+  - pip:
+    - git+https://github.com/UXARRAY/uxarray@interpolate-cross-section  # remove when you revert uxarray above!
