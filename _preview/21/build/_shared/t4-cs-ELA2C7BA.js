@@ -1,1 +1,0 @@
-import{a}from"/mpas-jedi-cookbook/_preview/21/build/_shared/chunk-OZPDFYT5.js";import"/mpas-jedi-cookbook/_preview/21/build/_shared/chunk-MN73XXYQ.js";import"/mpas-jedi-cookbook/_preview/21/build/_shared/chunk-IG7MYDTV.js";import"/mpas-jedi-cookbook/_preview/21/build/_shared/chunk-2NH4LW52.js";export default a();
