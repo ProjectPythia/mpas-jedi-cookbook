@@ -10,7 +10,7 @@ This Project Pythia Cookbook focuses on analyzing, visualizing, and understandin
 
 ## Motivation
 
-[NOAA](https://www.noaa.gov/)'s next generation Rapid Refresh Forecast System (RRFS) is built on the MPAS (Model for Prediction Accross Scals) Model and the JEDI (Joint Effort for Data assimilation Integration) system. While both MPAS and JEDI are powerful tools, they can also be complex to use and interpret. This cookbook will demonstrate how to explore MPAS forecasts and JEDI analyses directly on the unstructed grid using the UXARRAY (https://github.com/UXARRAY/uxarray) package. It also includes examples for examining JEDI analyses in observation space.
+[NOAA](https://www.noaa.gov/)'s next generation Rapid Refresh Forecast System (RRFS) is built on the MPAS (Model for Prediction Accross Scals) Model and the JEDI (Joint Effort for Data assimilation Integration) system. While both MPAS and JEDI are powerful tools, they can also be complex to use and interpret. This cookbook will demonstrate how to explore MPAS forecasts and JEDI analyses directly on the unstructed grid using the [UXarray](https://github.com/UXARRAY/uxarray) package. It also includes examples for examining JEDI analyses in observation space.
 
 ## Authors
 
