@@ -2,8 +2,8 @@
 
 <img src="thumbnail.png" alt="thumbnail" width="300"/>
 
-[![nightly-build](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?labpath=notebooks)
+[![nightly-build](https://github.com/ProjectPythia/mpas-jedi-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/mpas-jedi-cookbook/actions/workflows/nightly-build.yaml)
+[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/mpas-jedi-cookbook/main?labpath=notebooks)
 [![DOI](https://zenodo.org/badge/475509405.svg)](https://zenodo.org/badge/latestdoi/475509405)
 
 This Project Pythia Cookbook focuses on analyzing, visualizing, and interpreting MPAS model output on its native unstructured grid, as well as exploring MPAS-JEDI data assimilation results in both the model and observation spaces.   
