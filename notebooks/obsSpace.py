@@ -3,13 +3,38 @@ import numpy as np
 import pandas as pd
 
 
-def query_data(data):
+def query_data(data, meta_exclude=None):
     text = ""
     if data.data:
         data = data.data
     for var in data:
-        text += f"{var}, "
+        if meta_exclude is None or meta_exclude not in var:
+            text += f"{var}, "
     print(text.rstrip(","))
+
+
+def query_dataset(dataset, meta_exclude=None):
+    if dataset.groups:
+        for grp in dataset.groups:
+            print(grp)
+            text = "    "
+            if dataset.groups[grp].groups:
+                for nestgrp in dataset.groups[grp].groups:
+                    print(text + nestgrp)
+                    text2 = "    "
+                    for var in dataset.groups[grp].groups[nestgrp].variables:
+                        text2 += f"{var}, "
+                    print(text + text2.rstrip(","))
+            else:
+                for var in dataset.groups[grp].variables:
+                    if meta_exclude is None or meta_exclude not in var:
+                        text += f"{var}, "
+                print(text.rstrip(","))
+    else:
+        text = ""
+        for var in dataset.variables:
+            text += f"{var}, "
+        print(text.rstrip(","))
 
 
 def to_dataframe(obsDF):
@@ -70,7 +95,7 @@ class _ObsDF:  # DataFrame-like obs structure
 class obsSpace:
     def __init__(self, filepath):
         """
-        Initialize an IODA object and load the NetCDF file.
+        Initialize an obsSpace object and load the NetCDF file.
 
         Parameters:
         - filepath (str): Path to the NetCDF file.
@@ -91,7 +116,7 @@ class obsSpace:
         self._get_metadata()
 
         # Remove groups, provide direct access to varaibles, such as obsSpace.t, obsSpace.q, obsSpace.u, obsSpace.v, etc
-        for var in ["airTemperature", "windEastward", "windNorthward", "specificHumidity"]:
+        for var in ["airTemperature", "windEastward", "windNorthward", "specificHumidity", "brightnessTemperature"]:
             self._get_data_by_varname(var)
 
     def get_valid_subset(data, item, condition={"EffectiveQC2": 0}):
@@ -115,8 +140,9 @@ class obsSpace:
         for grp in dataset.groups:
             if dataset.groups[grp].groups:
                 for nestgrp in dataset.groups[grp].groups:  # DiagnosticFlags
-                    data[nestgrp] = dataset.groups[grp].groups[nestgrp].variables[varname][:]
-                    only_has_metadata = False
+                    if varname in dataset.groups[grp].groups[nestgrp].variables:
+                        data[nestgrp] = dataset.groups[grp].groups[nestgrp].variables[varname][:]
+                        only_has_metadata = False
             else:
                 if grp == "MetaData":
                     for var in dataset.groups['MetaData'].variables:
@@ -125,7 +151,7 @@ class obsSpace:
                 elif grp == "ObsError" and varname == "specificHumidity":
                     data["ObsError"] = dataset.groups["ObsError"].variables["relativeHumidity"][:]
                     only_has_metadata = False
-                elif varname == "brightnessTemperature" and (grp == "ObsValue" or grp == "ObsValueAdj"):
+                elif varname == "brightnessTemperature" and (grp == "ObsValue" or grp == "ObsValueAdj") and "brightnessTemperature" in dataset.groups[grp].variables:
                     data[grp] = dataset.groups[grp].variables["radiance"][:]
                     only_has_metadata = False
                 elif varname in dataset.groups[grp].variables:
@@ -143,6 +169,8 @@ class obsSpace:
             self.v = _ObsDF(data)
         elif varname == "specificHumidity":
             self.q = _ObsDF(data)
+        elif varname == "brightnessTemperature":
+            self.bt = _ObsDF(data)
 
     def __getitem__(self, key):
         # Enable obsSpace["t"]
@@ -154,10 +182,12 @@ class obsSpace:
             return self.u
         elif key in ["q", "specificHumidity"]:
             return self.q
+        elif key in ["bt", "brightnessTemperature"]:
+            return self.bt
         raise KeyError(f"Key '{key}' not found.")
 
     def __getattr__(self, name):
-        # Enable obsSpace.t (only called if attribute not found normally)
+        # Enable obsSpace.t
         try:
             return self.__getitem__(name)
         except KeyError:
