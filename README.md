@@ -6,17 +6,17 @@
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/mpas-jedi-cookbook/main?labpath=notebooks)
 [![DOI](https://zenodo.org/badge/475509405.svg)](https://zenodo.org/badge/latestdoi/475509405)
 
-This Project Pythia Cookbook focuses on analyzing, visualizing, and interpreting MPAS model output on its native unstructured grid, as well as exploring MPAS-JEDI data assimilation results in both the model and observation spaces.   
+This Project Pythia Cookbook focuses on analyzing, visualizing, and interpreting MPAS model output on the unstructured voronoi mesh, as well as exploring MPAS-JEDI data assimilation results in both the model and observation spaces.   
 
-**Disclaimer:** This cookbook does not cover how to run MPAS or JEDI. Readers are encourage to visit [MPAS](https://mpas-dev.github.io/) or [JEDI](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/latest/) websites for more details
+**Disclaimer:** This cookbook does NOT cover how to run MPAS or JEDI. Readers are encourage to visit [MPAS](https://mpas-dev.github.io/) or [JEDI](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/latest/) websites for more details.
 
 ## Motivation
 
-[NOAA](https://www.noaa.gov/)'s next generation Rapid Refresh Forecast System ([RRFS](https://github.com/NOAA-EMC/rrfs-workflow/tree/rrfs-mpas-jedi)) is built on the MPAS (Model for Prediction Accross Scals) Model and the JEDI (Joint Effort for Data assimilation Integration) system. While both MPAS and JEDI are powerful tools, they can also be complex to use and interpret. This cookbook will demonstrate how to explore MPAS output and MPAS-JEDI analyses directly on the unstructed grid using the [UXarray](https://github.com/UXARRAY/uxarray) package. It also includes examples for examining JEDI analyses in observation space.
+[NOAA](https://www.noaa.gov/)'s next generation Rapid Refresh Forecast System ([RRFS](https://github.com/NOAA-EMC/rrfs-workflow/tree/rrfs-mpas-jedi)) is built on the MPAS (Model for Prediction Accross Scals) Model and the JEDI (Joint Effort for Data assimilation Integration) system. While both MPAS and JEDI are powerful tools, they can also be complex to use and interpret. This cookbook will demonstrate how to explore MPAS output and MPAS-JEDI analyses directly on the unstructed voronoi mesh using the [UXarray](https://github.com/UXARRAY/uxarray) package. It also includes examples for examining JEDI analyses in observation space.
 
 ## Authors
 
-- [Guoqing Ge (CIRES/NOAA GSLL)](https://github.com/guoqing-noaa)
+- [Guoqing Ge (CIRES/NOAA GSL)](https://github.com/guoqing-noaa)
 - [Orhan Eroglu (NSF NCAR)](https://github.com/erogluorhan)
 
 ### Contributors
@@ -29,18 +29,18 @@ This Project Pythia Cookbook focuses on analyzing, visualizing, and interpreting
 
 This cookbook is broken into three sections:
 - Introduction
-- MPAS (regional) Analysis and Visualization
-- MPAS-JEDI Analysis and Visulization
+- MPAS(regional) Analysis and Visualization
+- JEDI(MPAS) Analysis and Visulization
 
-### Section 1 Introduction
+### Section 1. Introduction
 
 The introduction part will provide a quick overview about MPAS, JEDI and RRFS(v2).
 
-### Section 2 MPAS (regional) Analysis and Visualization
+### Section 2. MPAS (regional) Analysis and Visualization
 
 This part will demonstrate how to make basic and advanced MPAS analysis and visulazation using UXarray.
 
-### Section 3 MPAS-JEDI Analysis and Visualization
+### Section 3. MPAS-JEDI Analysis and Visualization
 
 This part will demonstrate how to explore MPAS-JEDI data assimilation results in both the model and observation spaces.
 
