@@ -23,11 +23,11 @@ project:
         - file: notebooks/overview-mpas.ipynb
         - file: notebooks/overview-jedi.ipynb
         - file: notebooks/overview-rrfsv2.ipynb
-    - title: MPAS (Regional) Analysis and Visualization
+    - title: MPAS(Regional) Analysis and Visualization
       children:
         - file: notebooks/mpas-basic.ipynb
         - file: notebooks/mpas-advanced.ipynb
-    - title: MPAS-JEDI Analysis and Visualization
+    - title: JEDI(MPAS) Analysis and Visualization
       children:
         - file: notebooks/jedi-mpas.ipynb
         - file: notebooks/jedi-obsSpace.ipynb
