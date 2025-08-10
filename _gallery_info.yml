@@ -1,6 +1,15 @@
 thumbnail: thumbnail.png
 tags:
   domains:
-    - sampledomain
+    - MPAS
+    - JEDI
+    - Data Assimilation
+    - Visualization
   packages:
-    - samplepackage
+    - UXarray
+    - bokeh
+    - holoviews
+    - hvplot
+    - seaborn
+    - xarray
+    - NetCDF4

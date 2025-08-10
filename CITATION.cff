@@ -4,8 +4,8 @@ authors:
   # add additional entries for each author -- see https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md
   - family-names: Ge
     given-names: Guoqing
-    orcid: https://orcid.org/0000-0002-9934-0608 #optional
-    website: https://github.com/guoqing-NOAA # optional
+    orcid: https://orcid.org/0000-0002-9934-0608
+    website: https://github.com/guoqing-NOAA
     affiliation: CIRES, University of Colorado Boulder at NOAA/GSL
   - family-names: Eroglu
     given-names: Orhan
@@ -13,13 +13,13 @@ authors:
     affiliation: NSF National Center for Atmospheric Research
   - family-names: Stephen
     given-names: Asare
-    orcid: https://orcid.org/0000-0002-2438-5000 #optional
-    website: https://github.com/stephen-asare/ # optional
+    orcid: https://orcid.org/0000-0002-2438-5000
+    website: https://github.com/stephen-asare
     affiliation: Florida State University
   - family-names: Pan
     given-names: Yan
-    orcid: https://orcid.org/0000-0001-7277-6877 #optional
-    website: https://github.com/ballight42 # optional
+    orcid: https://orcid.org/0000-0001-7277-6877
+    website: https://github.com/ballight42
     affiliation: Duke University
   - family-names: Karakurt
     given-names: Altug
@@ -28,10 +28,9 @@ authors:
     affiliation: University of Colorado Boulder
   - family-names: Lin
     given-names: Haidao
-    website: https://github.com/haidaolin-NOAA # optional
+    website: https://github.com/haidaolin-NOAA
     affiliation: NOAA/GSL
   - name: "mpas-jedi-cookbook contributors" # use the 'name' field to acknowledge organizations
     website: "https://github.com/ProjectPythia/mpas-jedi-cookbook/graphs/contributors"
 title: "MPAS+JEDI Cookbook"
-abstract: "A sample cookbook description."
-
+abstract: "This Cookbook demonstrates how to analyze and visualize MPAS and JEDI results on the unstructured Voronoi meshes as well as data assimilation statistics in the observation space."

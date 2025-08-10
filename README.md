@@ -16,10 +16,8 @@ This Project Pythia Cookbook focuses on analyzing, visualizing, and interpreting
 
 ## Authors
 
-- [Guoqing Ge](https://github.com/guoqing-noaa)
-- [Orhan Eroglu](https://github.com/erogluorhan)
-- etc.    
-_(Acknowledge primary content authors here)_
+- [Guoqing Ge (CIRES/NOAA GSLL)](https://github.com/guoqing-noaa)
+- [Orhan Eroglu (NSF NCAR)](https://github.com/erogluorhan)
 
 ### Contributors
 
@@ -29,7 +27,10 @@ _(Acknowledge primary content authors here)_
 
 ## Structure
 
-This cookbook is broken into three sections: "Introduction", "MPAS (regional) Analysis and Visualization", "MPAS-JEDI Analysis and Visulization".
+This cookbook is broken into three sections:
+- Introduction
+- MPAS (regional) Analysis and Visualization
+- MPAS-JEDI Analysis and Visulization
 
 ### Section 1 Introduction
 
@@ -49,7 +50,7 @@ You can either run the notebook using [Binder](https://binder.projectpythia.org/
 
 ### Running on Binder
 
-The simplest way to interact with a Jupyter Notebook is through [Binder](https://binder.projectpythia.org/), which enables the execution of a [Jupyter Book](https://jupyterbook.org) in the cloud. All you need to know is how to launch a Pythia Cookbooks chapter via Binder. Simply navigate your mouse to the top right corner of the book chapter you are viewing and click on the rocket ship icon, (see figure below), and be sure to select “launch Binder”. After a moment you should be presented with a notebook that you can interact with. I.e. you’ll be able to execute and even change the example programs. You’ll see that the code cells have no output at first, until you execute them by pressing {kbd}`Shift`\+{kbd}`Enter`. Complete details on how to interact with a live Jupyter notebook are described in [Getting Started with Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
+The simplest way to interact with a Jupyter Notebook is through [Binder](https://binder.projectpythia.org/), which enables the execution of a [Jupyter Book](https://jupyterbook.org) in the cloud. All you need to know is how to launch a Pythia Cookbooks chapter via Binder. Simply navigate your mouse to the top right corner of the book chapter you are viewing and click on the rocket ship icon, and be sure to select “launch Binder”. After a moment you should be presented with a notebook that you can interact with. I.e. you’ll be able to execute and even change the example programs. You’ll see that the code cells have no output at first, until you execute them by pressing {kbd}`Shift`\+{kbd}`Enter`. Complete details on how to interact with a live Jupyter notebook are described in [Getting Started with Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
 
 Note, not all Cookbook chapters are executable. If you do not see the rocket ship icon, such as on this page, you are not viewing an executable book chapter.
 

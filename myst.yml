@@ -37,3 +37,5 @@ project:
   abbreviations:
     MPAS: Model for Prediction Across Scales
     JEDI: Joint Effort for Data Assimilation Integration
+    RRFS: Rapid Refresh Forecast System
+    DA: Data Assimilation

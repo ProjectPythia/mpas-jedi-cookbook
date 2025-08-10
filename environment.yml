@@ -1,4 +1,4 @@
-name: mpas-jedi-cookbook-dev
+name: mpas-jedi-cookbook
 channels:
   - conda-forge
 dependencies:
@@ -19,6 +19,7 @@ dependencies:
   - s3fs
   - scipy
   - seaborn
+  - nbclean
   # - uxarray  # for now until releasing vertical cross-sections
   - xarray
   - vim
