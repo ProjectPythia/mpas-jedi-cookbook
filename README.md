@@ -4,7 +4,7 @@
 
 [![nightly-build](https://github.com/ProjectPythia/mpas-jedi-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/mpas-jedi-cookbook/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/mpas-jedi-cookbook/main?labpath=notebooks)
-[![DOI](https://zenodo.org/badge/475509405.svg)](https://zenodo.org/badge/latestdoi/475509405)
+[![DOI](https://zenodo.org/badge/1032750888.svg)](https://doi.org/10.5281/zenodo.16797270)
 
 This Project Pythia Cookbook focuses on analyzing, visualizing, and interpreting MPAS model output on the unstructured voronoi mesh, as well as exploring MPAS-JEDI data assimilation results in both the model and observation spaces.   
 
