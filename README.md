@@ -18,6 +18,11 @@ This Project Pythia Cookbook focuses on analyzing, visualizing, and interpreting
 
 - [Guoqing Ge (CIRES/NOAA GSL)](https://github.com/guoqing-noaa)
 - [Orhan Eroglu (NSF NCAR)](https://github.com/erogluorhan)
+- [Yan Pan (Duke University)](https://github.com/ballight42)
+- [Haidao Lin (NOAA/GSL)](https://github.com/HaidaoLin-NOAA)
+- [Stephen Asare (Florida State University)](https://github.com/stephen-asare)
+- [Altug Karakurt (University of Colorado, Boulder)](https://github.com/altugkarakurt)
+- [Philip Chmielowiec (NSF NCAR)](https://github.com/philipc2)
 
 ### Contributors
 

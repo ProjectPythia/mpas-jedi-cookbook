@@ -11,25 +11,29 @@ authors:
     given-names: Orhan
     orcid: https://orcid.org/0000-0003-3099-8775
     affiliation: NSF National Center for Atmospheric Research
-  - family-names: Stephen
-    given-names: Asare
-    orcid: https://orcid.org/0000-0002-2438-5000
-    website: https://github.com/stephen-asare
-    affiliation: Florida State University
   - family-names: Pan
     given-names: Yan
     orcid: https://orcid.org/0000-0001-7277-6877
     website: https://github.com/ballight42
     affiliation: Duke University
+  - family-names: Lin
+    given-names: Haidao
+    website: https://github.com/haidaolin-NOAA
+    affiliation: NOAA/GSL
+  - family-names: Stephen
+    given-names: Asare
+    orcid: https://orcid.org/0000-0002-2438-5000
+    website: https://github.com/stephen-asare
+    affiliation: Florida State University
   - family-names: Karakurt
     given-names: Altug
     orcid: https://orcid.org/0000-0003-2097-4999
     website: https://altugkarakurt.com/
     affiliation: University of Colorado Boulder
-  - family-names: Lin
-    given-names: Haidao
-    website: https://github.com/haidaolin-NOAA
-    affiliation: NOAA/GSL
+  - family-names: Chmielowiec
+    given-names: Philip
+    website: https://github.com/philipc2
+    affiliation: NSF NCAR
   - name: "mpas-jedi-cookbook contributors" # use the 'name' field to acknowledge organizations
     website: "https://github.com/ProjectPythia/mpas-jedi-cookbook/graphs/contributors"
 title: "MPAS+JEDI Cookbook"
