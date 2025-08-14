@@ -8,10 +8,11 @@ project:
   authors:
     - name: Guoqing Ge
     - name: Orhan Eroglu
+    - name: Yan Pan
     - name: Haidao Lin
     - name: Stephen Asare
-    - name: Yan Pan
     - name: Altug Karakurt
+    - name: Philip Chmielowiec
   copyright: '2025'
   toc:
     - file: README.md
@@ -39,3 +40,8 @@ project:
     JEDI: Joint Effort for Data Assimilation Integration
     RRFS: Rapid Refresh Forecast System
     DA: Data Assimilation
+    CIRES: Cooperative Institute for Research In Environmental Sciences
+    NOAA: National Oceanic and Atmospheric Administration
+    GSL: Global Systems Laboratory
+    NSF: National Science Foundation
+    NCAR: National Center for Atmospheric Research
