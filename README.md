@@ -6,7 +6,7 @@
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/mpas-jedi-cookbook/main?labpath=notebooks)
 [![DOI](https://zenodo.org/badge/1032750888.svg)](https://doi.org/10.5281/zenodo.16797270)
 
-This Project Pythia Cookbook focuses on analyzing, visualizing, and interpreting MPAS model output on the unstructured voronoi mesh, as well as exploring MPAS-JEDI data assimilation results in both the model and observation spaces.   
+This Project Pythia Cookbook focuses on analyzing, visualizing, and interpreting MPAS model output on the unstructured voronoi mesh, as well as exploring MPAS-JEDI data assimilation results in both the model and observation spaces.
 
 **Disclaimer:** This cookbook does NOT cover how to run MPAS or JEDI. Readers are encourage to visit [MPAS](https://mpas-dev.github.io/) or [JEDI](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/latest/) websites for more details.
 
@@ -33,6 +33,7 @@ This Project Pythia Cookbook focuses on analyzing, visualizing, and interpreting
 ## Structure
 
 This cookbook is broken into three sections:
+
 - Introduction
 - MPAS(regional) Analysis and Visualization
 - JEDI(MPAS) Analysis and Visulization
@@ -55,7 +56,7 @@ You can either run the notebook using [Binder](https://binder.projectpythia.org/
 
 ### Running on Binder
 
-The simplest way to interact with a Jupyter Notebook is through [Binder](https://binder.projectpythia.org/), which enables the execution of a [Jupyter Book](https://jupyterbook.org) in the cloud. All you need to know is how to launch a Pythia Cookbooks chapter via Binder. Simply navigate your mouse to the top right corner of the book chapter you are viewing and click on the rocket ship icon, and be sure to select “launch Binder”. After a moment you should be presented with a notebook that you can interact with. I.e. you’ll be able to execute and even change the example programs. You’ll see that the code cells have no output at first, until you execute them by pressing {kbd}`Shift`\+{kbd}`Enter`. Complete details on how to interact with a live Jupyter notebook are described in [Getting Started with Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
+The simplest way to interact with a Jupyter Notebook is through [Binder](https://binder.projectpythia.org/), which enables the execution of a [Jupyter Book](https://jupyterbook.org) in the cloud. All you need to know is how to launch a Pythia Cookbooks chapter via Binder. Simply navigate your mouse to the top right corner of the book chapter you are viewing and click on the rocket ship icon, and be sure to select “launch Binder”. After a moment you should be presented with a notebook that you can interact with. I.e. you’ll be able to execute and even change the example programs. You’ll see that the code cells have no output at first, until you execute them by pressing {kbd}`Shift`+{kbd}`Enter`. Complete details on how to interact with a live Jupyter notebook are described in [Getting Started with Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
 
 Note, not all Cookbook chapters are executable. If you do not see the rocket ship icon, such as on this page, you are not viewing an executable book chapter.
 
@@ -70,15 +71,20 @@ If you are interested in running this material locally on your computer, you wil
    ```
 
 1. Move into the `mpas-jedi-cookbook` directory
+
    ```bash
    cd mpas-jedi-cookbook
    ```
+
 1. Create and activate your conda environment from the `environment.yml` file
+
    ```bash
    conda env create -f environment.yml
    conda activate mpas-jedi-cookbook
    ```
+
 1. Move into the `notebooks` directory and start up Jupyterlab
+
    ```bash
    cd notebooks/
    jupyter lab
