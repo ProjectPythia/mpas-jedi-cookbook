@@ -3,6 +3,10 @@ import numpy as np
 import pandas as pd
 
 
+def query_obj(obj):
+    return [attr for attr in dir(obj) if not callable(getattr(obj, attr)) and not attr.startswith("__")]
+
+
 def query_data(data, meta_exclude=None):
     text = ""
     if data.data:
