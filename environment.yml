@@ -1,4 +1,4 @@
-name: mpas-jedi-cookbook
+name: mpas-jedi-cookbook-dev
 channels:
   - conda-forge
 dependencies:
@@ -13,15 +13,11 @@ dependencies:
   - jupyterlab-myst
   - matplotlib
   - mystmd
+  - nbclean
   - netCDF4
-  - pip
   - plotly
   - s3fs
   - scipy
   - seaborn
-  - nbclean
-  # - uxarray  # for now until releasing vertical cross-sections
+  - uxarray
   - xarray
-  - vim
-  - pip:
-    - git+https://github.com/UXARRAY/uxarray@interpolate-cross-section  # remove when you revert uxarray above!
