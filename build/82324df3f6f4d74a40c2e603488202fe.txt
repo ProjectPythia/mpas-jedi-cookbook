@@ -1,0 +1,291 @@
+[31m---------------------------------------------------------------------------[39m
+[31mSocketTimeoutError[39m                        Traceback (most recent call last)
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/aiobotocore/response.py:59[39m, in [36mStreamingBody.read[39m[34m(self, amt)[39m
+[32m     58[39m [38;5;28;01mtry[39;00m:
+[32m---> [39m[32m59[39m     chunk = [38;5;28;01mawait[39;00m [38;5;28mself[39m.__wrapped__.content.read(
+[32m     60[39m         amt [38;5;28;01mif[39;00m amt [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m -[32m1[39m
+[32m     61[39m     )
+[32m     62[39m [38;5;28;01mexcept[39;00m asyncio.TimeoutError [38;5;28;01mas[39;00m e:
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/aiohttp/streams.py:426[39m, in [36mStreamReader.read[39m[34m(self, n)[39m
+[32m    425[39m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[32m--> [39m[32m426[39m     block = [38;5;28;01mawait[39;00m [38;5;28mself[39m.readany()
+[32m    427[39m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m block:
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/aiohttp/streams.py:448[39m, in [36mStreamReader.readany[39m[34m(self)[39m
+[32m    447[39m [38;5;28;01mwhile[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._buffer [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._eof:
+[32m--> [39m[32m448[39m     [38;5;28;01mawait[39;00m [38;5;28mself[39m._wait([33m"[39m[33mreadany[39m[33m"[39m)
+[32m    450[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m._read_nowait(-[32m1[39m)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/aiohttp/streams.py:355[39m, in [36mStreamReader._wait[39m[34m(self, func_name)[39m
+[32m    354[39m     [38;5;28;01mwith[39;00m [38;5;28mself[39m._timer:
+[32m--> [39m[32m355[39m         [38;5;28;01mawait[39;00m waiter
+[32m    356[39m [38;5;28;01mfinally[39;00m:
+
+[31mSocketTimeoutError[39m: Timeout on reading data from socket
+
+During handling of the above exception, another exception occurred:
+
+[31mAioReadTimeoutError[39m                       Traceback (most recent call last)
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/fsspec/asyn.py:56[39m, in [36m_runner[39m[34m(event, coro, result, timeout)[39m
+[32m     55[39m [38;5;28;01mtry[39;00m:
+[32m---> [39m[32m56[39m     result[[32m0[39m] = [38;5;28;01mawait[39;00m coro
+[32m     57[39m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m ex:
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/s3fs/core.py:2577[39m, in [36m_inner_fetch[39m[34m(fs, bucket, key, version_id, start, end, req_kw)[39m
+[32m   2575[39m         resp[[33m"[39m[33mBody[39m[33m"[39m].close()
+[32m-> [39m[32m2577[39m [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m _error_wrapper(_call_and_read, retries=fs.retries)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/s3fs/core.py:146[39m, in [36m_error_wrapper[39m[34m(func, args, kwargs, retries)[39m
+[32m    145[39m err = translate_boto_error(err)
+[32m--> [39m[32m146[39m [38;5;28;01mraise[39;00m err
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/s3fs/core.py:114[39m, in [36m_error_wrapper[39m[34m(func, args, kwargs, retries)[39m
+[32m    113[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m114[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m func(*args, **kwargs)
+[32m    115[39m [38;5;28;01mexcept[39;00m S3_RETRYABLE_ERRORS [38;5;28;01mas[39;00m e:
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/s3fs/core.py:2573[39m, in [36m_inner_fetch.<locals>._call_and_read[39m[34m()[39m
+[32m   2572[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m2573[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m resp[[33m"[39m[33mBody[39m[33m"[39m].read()
+[32m   2574[39m [38;5;28;01mfinally[39;00m:
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/aiobotocore/response.py:63[39m, in [36mStreamingBody.read[39m[34m(self, amt)[39m
+[32m     62[39m [38;5;28;01mexcept[39;00m asyncio.TimeoutError [38;5;28;01mas[39;00m e:
+[32m---> [39m[32m63[39m     [38;5;28;01mraise[39;00m AioReadTimeoutError(
+[32m     64[39m         endpoint_url=[38;5;28mself[39m.__wrapped__.url, error=e
+[32m     65[39m     )
+[32m     66[39m [38;5;28;01mexcept[39;00m aiohttp.client_exceptions.ClientConnectionError [38;5;28;01mas[39;00m e:
+
+[31mAioReadTimeoutError[39m: Read timeout on endpoint URL: "https://js2.jetstream-cloud.org:8001/pythia/mpas/conus12km/conus12km.invariant.nc_L60_GFS"
+
+The above exception was the direct cause of the following exception:
+
+[31mFSTimeoutError[39m                            Traceback (most recent call last)
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/s3fs/core.py:2390[39m, in [36mS3File._fetch_range[39m[34m(self, start, end)[39m
+[32m   2389[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m2390[39m     [38;5;28;01mreturn[39;00m [43m_fetch_range[49m[43m([49m
+[32m   2391[39m [43m        [49m[38;5;28;43mself[39;49m[43m.[49m[43mfs[49m[43m,[49m
+[32m   2392[39m [43m        [49m[38;5;28;43mself[39;49m[43m.[49m[43mbucket[49m[43m,[49m
+[32m   2393[39m [43m        [49m[38;5;28;43mself[39;49m[43m.[49m[43mkey[49m[43m,[49m
+[32m   2394[39m [43m        [49m[38;5;28;43mself[39;49m[43m.[49m[43mversion_id[49m[43m,[49m
+[32m   2395[39m [43m        [49m[43mstart[49m[43m,[49m
+[32m   2396[39m [43m        [49m[43mend[49m[43m,[49m
+[32m   2397[39m [43m        [49m[43mreq_kw[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mreq_kw[49m[43m,[49m
+[32m   2398[39m [43m    [49m[43m)[49m
+[32m   2400[39m [38;5;28;01mexcept[39;00m [38;5;167;01mOSError[39;00m [38;5;28;01mas[39;00m ex:
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/s3fs/core.py:2559[39m, in [36m_fetch_range[39m[34m(fs, bucket, key, version_id, start, end, req_kw)[39m
+[32m   2558[39m logger.debug([33m"[39m[33mFetch: [39m[38;5;132;01m%s[39;00m[33m/[39m[38;5;132;01m%s[39;00m[33m, [39m[38;5;132;01m%s[39;00m[33m-[39m[38;5;132;01m%s[39;00m[33m"[39m, bucket, key, start, end)
+[32m-> [39m[32m2559[39m [38;5;28;01mreturn[39;00m [43msync[49m[43m([49m[43mfs[49m[43m.[49m[43mloop[49m[43m,[49m[43m [49m[43m_inner_fetch[49m[43m,[49m[43m [49m[43mfs[49m[43m,[49m[43m [49m[43mbucket[49m[43m,[49m[43m [49m[43mkey[49m[43m,[49m[43m [49m[43mversion_id[49m[43m,[49m[43m [49m[43mstart[49m[43m,[49m[43m [49m[43mend[49m[43m,[49m[43m [49m[43mreq_kw[49m[43m)[49m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/fsspec/asyn.py:101[39m, in [36msync[39m[34m(loop, func, timeout, *args, **kwargs)[39m
+[32m     99[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(return_result, asyncio.TimeoutError):
+[32m    100[39m     [38;5;66;03m# suppress asyncio.TimeoutError, raise FSTimeoutError[39;00m
+[32m--> [39m[32m101[39m     [38;5;28;01mraise[39;00m FSTimeoutError [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mreturn_result[39;00m
+[32m    102[39m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(return_result, [38;5;167;01mBaseException[39;00m):
+
+[31mFSTimeoutError[39m: 
+
+During handling of the above exception, another exception occurred:
+
+[31mIndexError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[7][39m[32m, line 2[39m
+[32m      1[39m uxds_a = ux.open_dataset(grid_file, ana_file)
+[32m----> [39m[32m2[39m uxds_b = [43mux[49m[43m.[49m[43mopen_dataset[49m[43m([49m[43mgrid_file[49m[43m,[49m[43m [49m[43mbkg_file[49m[43m)[49m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/uxarray/core/api.py:186[39m, in [36mopen_dataset[39m[34m(grid_filename_or_obj, filename_or_obj, chunks, chunk_grid, use_dual, grid_kwargs, **kwargs)[39m
+[32m    183[39m     grid_kwargs = {}
+[32m    185[39m [38;5;66;03m# Construct a Grid, validate parameters, and correct chunks[39;00m
+[32m--> [39m[32m186[39m uxgrid, corrected_chunks = [43m_get_grid[49m[43m([49m
+[32m    187[39m [43m    [49m[43mgrid_filename_or_obj[49m[43m,[49m[43m [49m[43mchunks[49m[43m,[49m[43m [49m[43mchunk_grid[49m[43m,[49m[43m [49m[43muse_dual[49m[43m,[49m[43m [49m[43mgrid_kwargs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m
+[32m    188[39m [43m[49m[43m)[49m
+[32m    190[39m [38;5;66;03m# Load the data as a Xarray Dataset[39;00m
+[32m    191[39m ds = _open_dataset_with_fallback(filename_or_obj, chunks=corrected_chunks, **kwargs)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/uxarray/core/api.py:303[39m, in [36m_get_grid[39m[34m(grid_filename_or_obj, chunks, chunk_grid, use_dual, grid_kwargs, **kwargs)[39m
+[32m    300[39m grid_kwargs[[33m"[39m[33mreturn_chunks[39m[33m"[39m] = [38;5;28;01mTrue[39;00m
+[32m    302[39m [38;5;66;03m# Create a Grid[39;00m
+[32m--> [39m[32m303[39m [38;5;28;01mreturn[39;00m [43mopen_grid[49m[43m([49m[43mgrid_filename_or_obj[49m[43m,[49m[43m [49m[43muse_dual[49m[43m=[49m[43muse_dual[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mgrid_kwargs[49m[43m)[49m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/uxarray/core/api.py:117[39m, in [36mopen_grid[39m[34m(grid_filename_or_obj, chunks, use_dual, **kwargs)[39m
+[32m    112[39m [38;5;28;01melse[39;00m:
+[32m    113[39m     [38;5;66;03m# Attempt to use Xarray directly for remaining input types[39;00m
+[32m    114[39m     grid_ds = _open_dataset_with_fallback(
+[32m    115[39m         grid_filename_or_obj, chunks=grid_chunks, **kwargs
+[32m    116[39m     )
+[32m--> [39m[32m117[39m     grid = [43mGrid[49m[43m.[49m[43mfrom_dataset[49m[43m([49m[43mgrid_ds[49m[43m,[49m[43m [49m[43muse_dual[49m[43m=[49m[43muse_dual[49m[43m)[49m
+[32m    119[39m [38;5;66;03m# Return the grid (and chunks, if requested) in a consistent manner.[39;00m
+[32m    120[39m [38;5;28;01mif[39;00m return_chunks:
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/uxarray/grid/grid.py:271[39m, in [36mGrid.from_dataset[39m[34m(cls, dataset, use_dual, **kwargs)[39m
+[32m    269[39m     grid_ds, source_dims_dict = _read_ugrid(dataset)
+[32m    270[39m [38;5;28;01melif[39;00m source_grid_spec == [33m"[39m[33mMPAS[39m[33m"[39m:
+[32m--> [39m[32m271[39m     grid_ds, source_dims_dict = [43m_read_mpas[49m[43m([49m[43mdataset[49m[43m,[49m[43m [49m[43muse_dual[49m[43m=[49m[43muse_dual[49m[43m)[49m
+[32m    272[39m [38;5;28;01melif[39;00m source_grid_spec == [33m"[39m[33mESMF[39m[33m"[39m:
+[32m    273[39m     grid_ds, source_dims_dict = _read_esmf(dataset)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/uxarray/io/_mpas.py:497[39m, in [36m_read_mpas[39m[34m(ext_ds, use_dual)[39m
+[32m    495[39m     source_dim_map = _dual_to_ugrid(ext_ds, ds)
+[32m    496[39m [38;5;28;01melse[39;00m:
+[32m--> [39m[32m497[39m     source_dim_map = [43m_primal_to_ugrid[49m[43m([49m[43mext_ds[49m[43m,[49m[43m [49m[43mds[49m[43m)[49m
+[32m    499[39m [38;5;28;01mreturn[39;00m ds, source_dim_map
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/uxarray/io/_mpas.py:34[39m, in [36m_primal_to_ugrid[39m[34m(in_ds, out_ds)[39m
+[32m     31[39m source_dims_dict = {}
+[32m     33[39m [38;5;28;01mif[39;00m [33m"[39m[33mlonVertex[39m[33m"[39m [38;5;129;01min[39;00m in_ds:
+[32m---> [39m[32m34[39m     [43m_parse_node_latlon_coords[49m[43m([49m[43min_ds[49m[43m,[49m[43m [49m[43mout_ds[49m[43m,[49m[43m [49m[43mmesh_type[49m[43m=[49m[33;43m"[39;49m[33;43mprimal[39;49m[33;43m"[39;49m[43m)[49m
+[32m     36[39m [38;5;28;01mif[39;00m [33m"[39m[33mxVertex[39m[33m"[39m [38;5;129;01min[39;00m in_ds:
+[32m     37[39m     _parse_node_xyz_coords(in_ds, out_ds, mesh_type=[33m"[39m[33mprimal[39m[33m"[39m)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/uxarray/io/_mpas.py:154[39m, in [36m_parse_node_latlon_coords[39m[34m(in_ds, out_ds, mesh_type)[39m
+[32m    152[39m [38;5;250m[39m[33;03m"""Parses cartesian corner node coordinates for either the Primal or Dual Mesh."""[39;00m
+[32m    153[39m [38;5;28;01mif[39;00m mesh_type == [33m"[39m[33mprimal[39m[33m"[39m:
+[32m--> [39m[32m154[39m     node_lon = [32;43m180.0[39;49m[43m [49m[43m*[49m[43m [49m[43min_ds[49m[43m[[49m[33;43m"[39;49m[33;43mlonVertex[39;49m[33;43m"[39;49m[43m][49m / np.pi
+[32m    155[39m     node_lat = [32m180.0[39m * in_ds[[33m"[39m[33mlatVertex[39m[33m"[39m] / np.pi
+[32m    157[39m     [38;5;66;03m# Ensure correct dimension name[39;00m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/core/_typed_ops.py:745[39m, in [36mDataArrayOpsMixin.__rmul__[39m[34m(self, other)[39m
+[32m    744[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__rmul__[39m([38;5;28mself[39m, other: DaCompatible) -> Self:
+[32m--> [39m[32m745[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_binary_op[49m[43m([49m[43mother[49m[43m,[49m[43m [49m[43moperator[49m[43m.[49m[43mmul[49m[43m,[49m[43m [49m[43mreflexive[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/core/dataarray.py:4899[39m, in [36mDataArray._binary_op[39m[34m(self, other, f, reflexive)[39m
+[32m   4893[39m other_variable_or_arraylike: DaCompatible = [38;5;28mgetattr[39m(other, [33m"[39m[33mvariable[39m[33m"[39m, other)
+[32m   4894[39m other_coords = [38;5;28mgetattr[39m(other, [33m"[39m[33mcoords[39m[33m"[39m, [38;5;28;01mNone[39;00m)
+[32m   4896[39m variable = (
+[32m   4897[39m     f([38;5;28mself[39m.variable, other_variable_or_arraylike)
+[32m   4898[39m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m reflexive
+[32m-> [39m[32m4899[39m     [38;5;28;01melse[39;00m f(other_variable_or_arraylike, [38;5;28mself[39m.variable)
+[32m   4900[39m )
+[32m   4901[39m coords, indexes = [38;5;28mself[39m.coords._merge_raw(other_coords, reflexive)
+[32m   4902[39m name = result_name([[38;5;28mself[39m, other])
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/core/_typed_ops.py:1173[39m, in [36mVariableOpsMixin.__rmul__[39m[34m(self, other)[39m
+[32m   1172[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__rmul__[39m([38;5;28mself[39m, other: VarCompatible) -> Self:
+[32m-> [39m[32m1173[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_binary_op[49m[43m([49m[43mother[49m[43m,[49m[43m [49m[43moperator[49m[43m.[49m[43mmul[49m[43m,[49m[43m [49m[43mreflexive[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/core/variable.py:2437[39m, in [36mVariable._binary_op[39m[34m(self, other, f, reflexive)[39m
+[32m   2435[39m     other_data, self_data, dims = _broadcast_compat_data(other, [38;5;28mself[39m)
+[32m   2436[39m [38;5;28;01melse[39;00m:
+[32m-> [39m[32m2437[39m     self_data, other_data, dims = [43m_broadcast_compat_data[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mother[49m[43m)[49m
+[32m   2438[39m keep_attrs = _get_keep_attrs(default=[38;5;28;01mFalse[39;00m)
+[32m   2439[39m attrs = [38;5;28mself[39m._attrs [38;5;28;01mif[39;00m keep_attrs [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/core/variable.py:3052[39m, in [36m_broadcast_compat_data[39m[34m(self, other)[39m
+[32m   3049[39m     dims = new_self.dims
+[32m   3050[39m [38;5;28;01melse[39;00m:
+[32m   3051[39m     [38;5;66;03m# rely on numpy broadcasting rules[39;00m
+[32m-> [39m[32m3052[39m     self_data = [38;5;28;43mself[39;49m[43m.[49m[43mdata[49m
+[32m   3053[39m     other_data = other
+[32m   3054[39m     dims = [38;5;28mself[39m.dims
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/core/variable.py:456[39m, in [36mVariable.data[39m[34m(self)[39m
+[32m    454[39m     duck_array = [38;5;28mself[39m._data.array
+[32m    455[39m [38;5;28;01melif[39;00m [38;5;28misinstance[39m([38;5;28mself[39m._data, indexing.ExplicitlyIndexed):
+[32m--> [39m[32m456[39m     duck_array = [38;5;28;43mself[39;49m[43m.[49m[43m_data[49m[43m.[49m[43mget_duck_array[49m[43m([49m[43m)[49m
+[32m    457[39m [38;5;28;01melif[39;00m is_duck_array([38;5;28mself[39m._data):
+[32m    458[39m     duck_array = [38;5;28mself[39m._data
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/core/indexing.py:943[39m, in [36mMemoryCachedArray.get_duck_array[39m[34m(self)[39m
+[32m    942[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mget_duck_array[39m([38;5;28mself[39m):
+[32m--> [39m[32m943[39m     duck_array = [38;5;28;43mself[39;49m[43m.[49m[43marray[49m[43m.[49m[43mget_duck_array[49m[43m([49m[43m)[49m
+[32m    944[39m     [38;5;66;03m# ensure the array object is cached in-memory[39;00m
+[32m    945[39m     [38;5;28mself[39m.array = as_indexable(duck_array)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/core/indexing.py:897[39m, in [36mCopyOnWriteArray.get_duck_array[39m[34m(self)[39m
+[32m    896[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mget_duck_array[39m([38;5;28mself[39m):
+[32m--> [39m[32m897[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43marray[49m[43m.[49m[43mget_duck_array[49m[43m([49m[43m)[49m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/core/indexing.py:737[39m, in [36mLazilyIndexedArray.get_duck_array[39m[34m(self)[39m
+[32m    734[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mxarray[39;00m[34;01m.[39;00m[34;01mbackends[39;00m[34;01m.[39;00m[34;01mcommon[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m BackendArray
+[32m    736[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m([38;5;28mself[39m.array, BackendArray):
+[32m--> [39m[32m737[39m     array = [38;5;28;43mself[39;49m[43m.[49m[43marray[49m[43m[[49m[38;5;28;43mself[39;49m[43m.[49m[43mkey[49m[43m][49m
+[32m    738[39m [38;5;28;01melse[39;00m:
+[32m    739[39m     array = apply_indexer([38;5;28mself[39m.array, [38;5;28mself[39m.key)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/backends/h5netcdf_.py:65[39m, in [36mH5NetCDFArrayWrapper.__getitem__[39m[34m(self, key)[39m
+[32m     64[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__getitem__[39m([38;5;28mself[39m, key):
+[32m---> [39m[32m65[39m     [38;5;28;01mreturn[39;00m [43mindexing[49m[43m.[49m[43mexplicit_indexing_adapter[49m[43m([49m
+[32m     66[39m [43m        [49m[43mkey[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43mshape[49m[43m,[49m[43m [49m[43mindexing[49m[43m.[49m[43mIndexingSupport[49m[43m.[49m[43mOUTER_1VECTOR[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43m_getitem[49m
+[32m     67[39m [43m    [49m[43m)[49m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/core/indexing.py:1129[39m, in [36mexplicit_indexing_adapter[39m[34m(key, shape, indexing_support, raw_indexing_method)[39m
+[32m   1107[39m [38;5;250m[39m[33;03m"""Support explicit indexing by delegating to a raw indexing method.[39;00m
+[32m   1108[39m 
+[32m   1109[39m [33;03mOuter and/or vectorized indexers are supported by indexing a second time[39;00m
+[32m   (...)[39m[32m   1126[39m [33;03mIndexing result, in the form of a duck numpy-array.[39;00m
+[32m   1127[39m [33;03m"""[39;00m
+[32m   1128[39m raw_key, numpy_indices = decompose_indexer(key, shape, indexing_support)
+[32m-> [39m[32m1129[39m result = [43mraw_indexing_method[49m[43m([49m[43mraw_key[49m[43m.[49m[43mtuple[49m[43m)[49m
+[32m   1130[39m [38;5;28;01mif[39;00m numpy_indices.tuple:
+[32m   1131[39m     [38;5;66;03m# index the loaded duck array[39;00m
+[32m   1132[39m     indexable = as_indexable(result)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/xarray/backends/h5netcdf_.py:72[39m, in [36mH5NetCDFArrayWrapper._getitem[39m[34m(self, key)[39m
+[32m     70[39m [38;5;28;01mwith[39;00m [38;5;28mself[39m.datastore.lock:
+[32m     71[39m     array = [38;5;28mself[39m.get_array(needs_lock=[38;5;28;01mFalse[39;00m)
+[32m---> [39m[32m72[39m     [38;5;28;01mreturn[39;00m [43marray[49m[43m[[49m[43mkey[49m[43m][49m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/h5netcdf/core.py:601[39m, in [36mBaseVariable.__getitem__[39m[34m(self, key)[39m
+[32m    599[39m     [38;5;28;01mreturn[39;00m h5ds[key].view(view)
+[32m    600[39m [38;5;28;01melse[39;00m:
+[32m--> [39m[32m601[39m     [38;5;28;01mreturn[39;00m [43mh5ds[49m[43m[[49m[43mkey[49m[43m][49m
+
+[36mFile [39m[32mh5py/_objects.pyx:54[39m, in [36mh5py._objects.with_phil.wrapper[39m[34m()[39m
+
+[36mFile [39m[32mh5py/_objects.pyx:55[39m, in [36mh5py._objects.with_phil.wrapper[39m[34m()[39m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/h5py/_hl/dataset.py:840[39m, in [36mDataset.__getitem__[39m[34m(self, args, new_dtype)[39m
+[32m    838[39m [38;5;28;01mif[39;00m [38;5;28mself[39m._fast_read_ok [38;5;129;01mand[39;00m (new_dtype [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m):
+[32m    839[39m     [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m840[39m         [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_fast_reader[49m[43m.[49m[43mread[49m[43m([49m[43margs[49m[43m)[49m
+[32m    841[39m     [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[32m    842[39m         [38;5;28;01mpass[39;00m  [38;5;66;03m# Fall back to Python read pathway below[39;00m
+
+[36mFile [39m[32mh5py/_selector.pyx:375[39m, in [36mh5py._selector.Reader.read[39m[34m()[39m
+
+[36mFile [39m[32mh5py/h5fd.pyx:159[39m, in [36mh5py.h5fd.H5FD_fileobj_read[39m[34m()[39m
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/fsspec/spec.py:2140[39m, in [36mAbstractBufferedFile.readinto[39m[34m(self, b)[39m
+[32m   2135[39m [38;5;250m[39m[33;03m"""mirrors builtin file's readinto method[39;00m
+[32m   2136[39m 
+[32m   2137[39m [33;03mhttps://docs.python.org/3/library/io.html#io.RawIOBase.readinto[39;00m
+[32m   2138[39m [33;03m"""[39;00m
+[32m   2139[39m out = [38;5;28mmemoryview[39m(b).cast([33m"[39m[33mB[39m[33m"[39m)
+[32m-> [39m[32m2140[39m data = [38;5;28;43mself[39;49m[43m.[49m[43mread[49m[43m([49m[43mout[49m[43m.[49m[43mnbytes[49m[43m)[49m
+[32m   2141[39m out[: [38;5;28mlen[39m(data)] = data
+[32m   2142[39m [38;5;28;01mreturn[39;00m [38;5;28mlen[39m(data)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/fsspec/spec.py:2122[39m, in [36mAbstractBufferedFile.read[39m[34m(self, length)[39m
+[32m   2119[39m [38;5;28;01mif[39;00m length == [32m0[39m:
+[32m   2120[39m     [38;5;66;03m# don't even bother calling fetch[39;00m
+[32m   2121[39m     [38;5;28;01mreturn[39;00m [33mb[39m[33m"[39m[33m"[39m
+[32m-> [39m[32m2122[39m out = [38;5;28;43mself[39;49m[43m.[49m[43mcache[49m[43m.[49m[43m_fetch[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43mloc[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43mloc[49m[43m [49m[43m+[49m[43m [49m[43mlength[49m[43m)[49m
+[32m   2124[39m logger.debug(
+[32m   2125[39m     [33m"[39m[38;5;132;01m%s[39;00m[33m read: [39m[38;5;132;01m%i[39;00m[33m - [39m[38;5;132;01m%i[39;00m[33m [39m[38;5;132;01m%s[39;00m[33m"[39m,
+[32m   2126[39m     [38;5;28mself[39m,
+[32m   (...)[39m[32m   2129[39m     [38;5;28mself[39m.cache._log_stats(),
+[32m   2130[39m )
+[32m   2131[39m [38;5;28mself[39m.loc += [38;5;28mlen[39m(out)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/fsspec/caching.py:287[39m, in [36mReadAheadCache._fetch[39m[34m(self, start, end)[39m
+[32m    285[39m end = [38;5;28mmin[39m([38;5;28mself[39m.size, end + [38;5;28mself[39m.blocksize)
+[32m    286[39m [38;5;28mself[39m.total_requested_bytes += end - start
+[32m--> [39m[32m287[39m [38;5;28mself[39m.cache = [38;5;28;43mself[39;49m[43m.[49m[43mfetcher[49m[43m([49m[43mstart[49m[43m,[49m[43m [49m[43mend[49m[43m)[49m  [38;5;66;03m# new block replaces old[39;00m
+[32m    288[39m [38;5;28mself[39m.start = start
+[32m    289[39m [38;5;28mself[39m.end = [38;5;28mself[39m.start + [38;5;28mlen[39m([38;5;28mself[39m.cache)
+
+[36mFile [39m[32m~/micromamba/envs/mpas-jedi-cookbook-dev/lib/python3.11/site-packages/s3fs/core.py:2401[39m, in [36mS3File._fetch_range[39m[34m(self, start, end)[39m
+[32m   2390[39m     [38;5;28;01mreturn[39;00m _fetch_range(
+[32m   2391[39m         [38;5;28mself[39m.fs,
+[32m   2392[39m         [38;5;28mself[39m.bucket,
+[32m   (...)[39m[32m   2397[39m         req_kw=[38;5;28mself[39m.req_kw,
+[32m   2398[39m     )
+[32m   2400[39m [38;5;28;01mexcept[39;00m [38;5;167;01mOSError[39;00m [38;5;28;01mas[39;00m ex:
+[32m-> [39m[32m2401[39m     [38;5;28;01mif[39;00m [43mex[49m[43m.[49m[43margs[49m[43m[[49m[32;43m0[39;49m[43m][49m == errno.EINVAL [38;5;129;01mand[39;00m [33m"[39m[33mpre-conditions[39m[33m"[39m [38;5;129;01min[39;00m ex.args[[32m1[39m]:
+[32m   2402[39m         [38;5;28;01mraise[39;00m FileExpired(
+[32m   2403[39m             filename=[38;5;28mself[39m.details[[33m"[39m[33mname[39m[33m"[39m], e_tag=[38;5;28mself[39m.details.get([33m"[39m[33mETag[39m[33m"[39m)
+[32m   2404[39m         ) [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mex[39;00m
+[32m   2405[39m     [38;5;28;01melse[39;00m:
+
+[31mIndexError[39m: tuple index out of range
