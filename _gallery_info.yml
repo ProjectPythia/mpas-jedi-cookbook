@@ -13,3 +13,5 @@ tags:
     - seaborn
     - xarray
     - NetCDF4
+  events:
+    - Cook-off 2025
