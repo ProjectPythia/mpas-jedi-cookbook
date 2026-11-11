@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://localhost:3000/sitemap_style.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="http://pre.render/sitemap_style.xsl" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000</loc>
+    <loc>http://pre.render</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/how-to-cite</loc>
+    <loc>http://pre.render/notebooks/how-to-cite</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/overview-mpas</loc>
+    <loc>http://pre.render/notebooks/overview-mpas</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/overview-jedi</loc>
+    <loc>http://pre.render/notebooks/overview-jedi</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/overview-rrfsv2</loc>
+    <loc>http://pre.render/notebooks/overview-rrfsv2</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/mpas-basic</loc>
+    <loc>http://pre.render/notebooks/mpas-basic</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/mpas-advanced</loc>
+    <loc>http://pre.render/notebooks/mpas-advanced</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/jedi-mpas</loc>
+    <loc>http://pre.render/notebooks/jedi-mpas</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/jedi-obsspace</loc>
+    <loc>http://pre.render/notebooks/jedi-obsspace</loc>
   </url>
 </urlset>
